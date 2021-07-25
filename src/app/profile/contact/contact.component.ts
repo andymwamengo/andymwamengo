@@ -3,6 +3,7 @@ import { ProfileService } from '../profile.service';
 import { SnotifyService } from 'ng-snotify';
 import { environment } from '../../../environments/environment';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -12,15 +13,16 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class ContactComponent implements OnInit {
   contactForm: FormGroup;
   submitted = false;
-
-  constructor(private formBuilder: FormBuilder) { }
+  response: any;
+  error: any;
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
 
   ngOnInit() {
     this.contactForm = this.formBuilder.group({
       name: ['', Validators.required],
       subject: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      message: ['', [Validators.required, Validators.minLength(6)]],
+      message: ['', [Validators.required, Validators.minLength(2)]],
     });
   }
 
@@ -34,6 +36,14 @@ export class ContactComponent implements OnInit {
     if (this.contactForm.invalid) {
       return;
     }
+    this.http.post('http://tcnetinc.com:3000/api/auth/foward/message/', this.contactForm.value).subscribe(
+      (res: any) => {
+        this.response = res;
+      },
+      (error: any) => {
+        this.error = error;
+      }
+    );
 
     // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.contactForm.value))
   }  // snotifyConfig = environment.snotifyConfig;
