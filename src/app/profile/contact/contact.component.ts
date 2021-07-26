@@ -36,7 +36,7 @@ export class ContactComponent implements OnInit {
     if (this.contactForm.invalid) {
       return;
     }
-    this.http.post('http://tcnetinc.com:3000/api/auth/foward/message/', this.contactForm.value).subscribe(
+    this.http.post('https://tcnetinc.com/api/auth/foward/message/', this.contactForm.value).subscribe(
       (res: any) => {
         this.response = res;
       },
