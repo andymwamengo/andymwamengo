@@ -3148,7 +3148,8 @@ img {
 }
 
 .index-page .page-header {
-  height: 125vh;
+  height: 85vh;
+  /* background-color: wheat; */
 }
 
 .index-page .page-header .container > .content-center {
@@ -3157,7 +3158,7 @@ img {
 
 .index-page .page-header .category-absolute {
   position: absolute;
-  top: 100vh;
+  top: 80vh;
   margin-top: -60px;
   padding: 0 15px;
   width: 100%;
@@ -3165,7 +3166,7 @@ img {
 }
 
 .profile-page .page-header {
-  min-height: 550px;
+  min-height: 450px;
 }
 
 .profile-page .profile-container {
@@ -3178,8 +3179,8 @@ img {
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto;
-  -webkit-box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+  /* -webkit-box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3); */
 }
 
 .profile-page .title {
@@ -3255,7 +3256,7 @@ img {
 }
 
 .page-header {
-  height: 100vh;
+  height: 80vh;
   max-height: 1050px;
   padding: 0;
   color: #FFFFFF;
@@ -3393,13 +3394,13 @@ img {
     transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
   }
   .sidebar-collapse .navbar-collapse:before {
-    background: #378C3F;
+    background: whitesmoke;
     /* For browsers that do not support gradients */
     /* For Safari 5.1 to 6.0 */
     /* For Opera 11.1 to 12.0 */
     /* For Firefox 3.6 to 15 */
-    background: -webkit-gradient(linear, left top, left bottom, from(#378C3F), color-stop(80%, #000));
-    background: linear-gradient(#378C3F 0%, #000 80%);
+    background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(80%, #000));
+    background: linear-gradient(white, white);
     /* Standard syntax (must be last) */
     opacity: 0.76;
     filter: alpha(opacity=76);
@@ -3417,10 +3418,10 @@ img {
     margin-top: 0.3125rem;
   }
   .sidebar-collapse .navbar-collapse .navbar-nav:not(.navbar-logo) .nav-link:not(.btn) {
-    color: #FFFFFF;
+    color: #272727;
   }
   .sidebar-collapse .navbar-collapse .dropdown-menu .dropdown-item {
-    color: #FFFFFF;
+    color: #272727;
   }
   .sidebar-collapse .navbar .navbar-nav {
     margin-top: 53px;
@@ -4814,14 +4815,16 @@ img {
 /* Body */
 /* Profile Page Background Style */
 .page-header {
-  background: rgba(44, 44, 44, 0.2);
+  /* background: rgba(44, 44, 44, 0.2); */
   /* For browsers that do not support gradients */
   /* For Safari 5.1 to 6.0 */
   /* For Opera 11.1 to 12.0 */
   /* For Firefox 3.6 to 15 */
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(44, 44, 44, 0.2)), to(rgba(55, 140, 63, 0.6)));
-  background: linear-gradient(0deg, rgba(44, 44, 44, 0.2), rgba(55, 140, 63, 0.6));
+  /* background: -webkit-gradient(linear, left bottom, left top, from(rgba(44, 44, 44, 0.2)), to(rgba(55, 140, 63, 0.6))); */
+  /* background: linear-gradient(0deg, rgba(44, 44, 44, 0.2), rgba(229, 233, 229, 0.6)); */
   /* Standard syntax */
+  background-color: white;
+  color: rgb(32, 32, 32);
 }
 
 .page-header .btn {
@@ -4866,7 +4869,7 @@ img {
 
 .cc-profile-image a:before {
   content: "";
-  border: 15px solid rgba(55, 140, 63, 0.6);
+  /* border: 15px solid rgba(55, 140, 63, 0.6); */
   border-radius: 50%;
   height: 180px;
   width: 180px;
