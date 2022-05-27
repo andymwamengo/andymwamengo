@@ -1,234 +1,61 @@
 <div class="d-flex justify-content-center">
   <div class="col-sm-6">
     <div class="container-xxl container-xl container-lg py-5">
-      <div class="account-wrapper container-xxl container-xl container-lg">
+      <div class="account-wrapper container-xxl container-xl container-lg" *ngIf="(fullName$ | async) as fullName;">
         <div class="d-flex justify-content-start px-1">
-          <img src="https://tsiteshare.com/api/files/910eb3d55c10aeb42fe7a53f85c308a25e.webp"
-            class="rounded-circlex rounded d-block" height="100px" width="100px" alt="">
+          <img [src]="fullName.picture" class="rounded d-block" height="100px" width="100px">
         </div>
         <div class="fullname-container py-2">
-          <h4>Andongwisye Mwamengo</h4>
-          <i class="text-muted">Software Developer</i>
+          <h4>{{ fullName.fullName }}</h4>
+          <i class="text-muted">{{ fullName.title }}</i>
         </div>
         <hr />
       </div>
 
-      <div class="contacts-wrapper px-2">
+      <div class="contacts-wrapper px-2" *ngIf="(contact$ | async) as contact">
         <div class="column justify-content-start">
-          <h5 class="">Contact Information</h5>
-          <div class="py-2">
-            Email:
-            <a href="mailto:andymwamengo@gmail.com" class="px-4">andymwamengo@gmail.com</a>
-          </div>
-          <div class="py-2">
-            Website:
-            <a href="http://andymwamengo.xyz" class="px-2">https://andymwamengo.xyz</a>
-          </div>
-          <div class="py-2">
-            LinkedIn:
-            <a href="https://www.linkedin.com/in/andymwamengo/"
-              class="px-2">https://www.linkedin.com/in/andymwamengo/</a>
-          </div>
-          <div class="py-2">
-            Twitter:
-            <a href="https://twitter.com/andymwamengo" class="px-3">https://twitter.com/andymwamengo</a>
-          </div>
-          <div class="py-2">
-            GitHub:
-            <a href="https://github.com/andymwamengo" class="px-3">https://github.com/andymwamengo</a>
+          <h5 class="">{{ contact.label }}</h5>
+          <div class="py-2" *ngFor="let item of contact.data">
+            {{ item.label }}:
+            <a [href]="item.link" class="px-4">{{item.name}}</a>
           </div>
         </div>
       </div>
 
-      <div class="skills-wrapper column flex-wrap">
-        <h3 class="">Skills</h3>
-        <div class="skills-wrapper px-2 py-2">
+      <div class="skills-wrapper column flex-wrap py-2" *ngIf="(skills$ | async) as skill">
+        <h3 class="">{{ skill.label }}</h3>
+        <div class="skills-wrapper px-2 py-2" *ngFor="let item of skill.data">
           <div class="column justify-content-start">
             <div class="strongly-experience">
               <div class="py-2">
-                <h5 class="">
-                  Programming Languages:
-                </h5>
-                <span class="badge rounded-pill text-bg-info">JavaScript</span>
-                <span class="badge rounded-pill text-bg-secondary">Typescript</span>
-                <span class="badge rounded-pill text-bg-info">Dart</span>
-                <span class="badge rounded-pill text-bg-secondary">PHP</span>
-                <span class="badge rounded-pill text-bg-info">Python</span>
+                <h5 class=""> {{ item.title }}</h5>
+                <span class="badge m-1 rounded-pill" *ngFor="let tool of item.tools; let even = even; let odd = odd"
+                  [ngClass]="{ 'text-bg-info': even, 'text-bg-secondary': odd }">
+                  {{ tool.name }}
+                </span>
               </div>
             </div>
             <div class="strongly-experience">
               <div class="py-2">
                 <h6 class="text-muted">
-                  Also worked with programming
+                  {{ item.subtitle }}
                 </h6>
-                <span class="badge rounded-pill text-bg-info">Java</span>
-                <span class="badge rounded-pill text-bg-secondary">Kotlin</span>
-                <div class="p-2">
-                  <em class="text-muted">Exploring</em>
+                <div *ngIf="item?.subtools?.length > 0">
+                  <span class="badge m-1 rounded-pill"
+                  *ngFor="let subTool of item.subtools; let even = even; let odd = odd"
+                  [ngClass]="{ 'text-bg-info': even, 'text-bg-secondary': odd }">{{ subTool.name
+                  }}</span>
                 </div>
-                <span class="badge rounded-pill text-bg-info">Rust</span>
-                <span class="badge rounded-pill text-bg-secondary">Golang</span>
-                <span class="badge rounded-pill text-bg-info">C++</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="skills-wrapper px-2 py-2">
-          <div class="column justify-content-start">
-            <div class="strongly-experience">
-              <div class="py-2">
-                <h5 class="">
-                  Framework Tools:
-                </h5>
-                <span class="badge rounded-pill text-bg-info">NodeJS (Express & NestJS)</span>
-                <span class="badge rounded-pill text-bg-secondary">Angular</span>
-                <span class="badge rounded-pill text-bg-info">Flutter</span>
-                <span class="badge rounded-pill text-bg-secondary">Laravel</span>
-                <span class="badge rounded-pill text-bg-info">Django</span>
-              </div>
-            </div>
-            <div class="strongly-experience">
-              <div class="py-2">
-                <h6 class="text-muted">
-                  Also worked with framework
-                </h6>
-                <span class="badge rounded-pill text-bg-info">SpringBoot</span>
-                <span class="badge rounded-pill text-bg-secondary">Flask</span>
-                <span class="badge rounded-pill text-bg-info">Electron</span>
-                <span class="badge rounded-pill text-bg-secondary">Vanilla JS</span>
                 <div class="p-2">
-                  <em class="text-muted">Exploring</em>
+                  <em class="text-muted" *ngIf="item.extraTitle">{{ item.extraTitle}}</em>
                 </div>
-                <span class="badge rounded-pill text-bg-info">Actix</span>
-                <span class="badge rounded-pill text-bg-secondary">Gin</span>
-                <span class="badge rounded-pill text-bg-secondary">Machine Learning</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="skills-wrapper px-2 py-2">
-          <div class="column justify-content-start">
-            <div class="strongly-experience">
-              <div class="py-2">
-                <h5 class="">
-                  Databases:
-                </h5>
-                <span class="badge rounded-pill text-bg-info">Postgres</span>
-                <span class="badge rounded-pill text-bg-secondary">MySQL</span>
-                <span class="badge rounded-pill text-bg-info">Microsoft SQL Server</span>
-                <span class="badge rounded-pill text-bg-secondary">MongoDB</span>
-                <span class="badge rounded-pill text-bg-secondary">Sqlite</span>
-                <span class="badge rounded-pill text-bg-secondary">Redis</span>
-              </div>
-            </div>
-            <div class="strongly-experience">
-              <div class="py-0">
-                <div class="p-2">
-                  <em class="text-muted">Exploring</em>
+                <div *ngIf="item?.extratools?.length > 0">
+                  <span class="badge m-1 rounded-pill"
+                    *ngFor="let extTool of item.extratools; let even = even; let odd = odd"
+                    [ngClass]="{ 'text-bg-info': even, 'text-bg-secondary': odd }">
+                    {{ extTool!.name }}
+                  </span>
                 </div>
-                <span class="badge rounded-pill text-bg-info">Casandra</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="skills-wrapper px-2 py-2">
-          <div class="column justify-content-start">
-            <div class="strongly-experience">
-              <div class="py-2">
-                <h5 class="">
-                  Development Tools:
-                </h5>
-                <span class="badge rounded-pill text-bg-info">Docker</span>
-                <span class="badge rounded-pill text-bg-secondary">CI/CD with GitHub Action</span>
-                <span class="badge rounded-pill text-bg-info">Nginx & Apache Deployment</span>
-                <span class="badge rounded-pill text-bg-secondary">Bash scripting </span>
-                <span class="badge rounded-pill text-bg-secondary">Pm2 </span>
-              </div>
-            </div>
-            <div class="strongly-experience">
-              <div class="py-0">
-                <div class="p-2">
-                  <em class="text-muted">Exploring</em>
-                </div>
-                <span class="badge rounded-pill text-bg-info">Docker Swarm </span>
-                <span class="badge rounded-pill text-bg-secondary">Kubernetes</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="skills-wrapper px-2 py-2">
-          <div class="column justify-content-start">
-            <div class="strongly-experience">
-              <div class="py-2">
-                <h5 class="">
-                  API Development:
-                </h5>
-                <span class="badge rounded-pill text-bg-info">REST</span>
-              </div>
-            </div>
-            <div class="strongly-experience">
-              <div class="py-0">
-                <div class="p-2">
-                  <em class="text-muted">Exploring</em>
-                </div>
-                <span class="badge rounded-pill text-bg-secondary">GraphQL</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="skills-wrapper px-2 py-2">
-          <div class="column justify-content-start">
-            <div class="strongly-experience">
-              <div class="py-2">
-                <h5 class="">
-                  Design UI:
-                </h5>
-                <span class="badge rounded-pill text-bg-info">Figma</span>
-                <span class="badge rounded-pill text-bg-secondary">material Design</span>
-                <span class="badge rounded-pill text-bg-info">Boostrap</span>
-                <span class="badge rounded-pill text-bg-info">CSS, SCSS</span>
-              </div>
-            </div>
-            <div class="strongly-experience">
-              <div class="py-0">
-                <div class="p-2">
-                  <em class="text-muted">Exploring</em>
-                </div>
-                <span class="badge rounded-pill text-bg-info">Tailwind</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="skills-wrapper px-2 py-2">
-          <div class="column justify-content-start">
-            <div class="strongly-experience">
-              <div class="">
-                <h5 class="">
-                  Languages:
-                </h5>
-                <span class="badge rounded-pill text-bg-info">English</span>
-                <span class="badge rounded-pill text-bg-secondary">Swahili</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="skills-wrapper px-2 py-2">
-          <div class="column justify-content-start">
-            <div class="strongly-experience">
-              <div class="">
-                <h5 class="">
-                  Project Management Tools:
-                </h5>
-                <span class="badge rounded-pill text-bg-info">Jira</span>
-                <span class="badge rounded-pill text-bg-secondary">Clickup</span>
               </div>
             </div>
           </div>
@@ -239,123 +66,25 @@
       <div class="project-wrapper">
         <div class="project-wrapper px-2 py-2">
           <div class="column justify-content-start">
-            <div class="strongly-experience">
+            <div class="strongly-experience" *ngIf="(project$ | async) as project;">
               <div class="py-2">
                 <h3 class="">
-                  Projects:
+                  {{ project.label }}:
                 </h3>
-                <div class="project-item-wrapper py-3">
-                  <a href="https://tsiteshare.com" class="fs-5 fw-bold">tsiteshare</a>
+                <div class="project-item-wrapper py-3" *ngFor="let item of project.data;">
+                  <a [href]="item.link" class="fs-5 fw-bold">{{ item.title}}</a>
                   <div class="text-muted p-2">
-                    tsiteshare is the academic based platform which is a platform for questions, answers, upvotes,
-                    downvotes, jobs and academic based events and sharing services provided by the platform.
-                    The platform is provided as web application <i class="px-2">and android application in
-                      development.</i>
+                    {{ item.description }} <i class="px-2">{{ item.spanText}}</i>
                   </div>
                   <div class="tools-wrapper mx-2">
-                    <div class="fw-bold">Tools</div>
-                    <div class="fst-normal text-muted">
-                      <span class="badge rounded-pill text-bg-info">NestJS</span>
-                      <span class="badge rounded-pill text-bg-secondary">Angular</span>
-                      <span class="badge rounded-pill text-bg-info">Postgres</span>
-                      <span class="badge rounded-pill text-bg-secondary">Flutter</span>
-                      <span class="badge rounded-pill text-bg-info">Redis</span>
+                    <div class="fw-bold">{{ item.toolLabel }}</div>
+                    <div class="fs-normal text-muted">
+                      <span class="badge m-1 rounded-pill"
+                        *ngFor="let tool of item.tools; let even = even; let odd = odd"
+                        [ngClass]="{ 'text-bg-info': even, 'text-bg-secondary': odd }">{{ tool.name }}</span>
                     </div>
                   </div>
                 </div>
-                <div class="project-item-wrapper py-2">
-                  <a href="https://tcnetinc.shop" class="fs-5 fw-bold">tnetwork</a>
-                  <div class="text-muted p-2">
-                    tnetwork is the twitter like social network where people can exchange ideas via post, messaging,
-                    moments, spaces
-                    The platform is provided as web application.
-                  </div>
-                  <div class="tools-wrapper mx-3">
-                    <div class="fw-bold">Tools</div>
-                    <div class="fst-normal text-muted">
-                      <span class="badge rounded-pill text-bg-info">Express</span>
-                      <span class="badge rounded-pill text-bg-secondary">Angular</span>
-                      <span class="badge rounded-pill text-bg-info">Postgres</span>
-                      <span class="badge rounded-pill text-bg-info">Redis</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="project-item-wrapper py-3">
-                  <a href="https://mambopoint.com" class="fs-5 fw-bold">mambopoint</a>
-                  <div class="text-muted p-2">
-                    mambopoint is a network that intends to support the entire life-span of a middle-class individual.
-                    It
-                    supports this life-cycle by providing relevant and most needed services at every stage of living.
-                    It
-                    starts from the moment an individual aspires to enter into a job market to as far as their desire
-                    to
-                    acquire cars for transport. These are only example services that can be put into the mambopoint
-                    platform, many more are welcome.
-                  </div>
-                  <div class="tools-wrapper mx-2">
-                    <div class="fw-bold">Tools</div>
-                    <div class="fst-normal text-muted">
-                      <span class="badge rounded-pill text-bg-info">NestJS</span>
-                      <span class="badge rounded-pill text-bg-secondary">Angular</span>
-                      <span class="badge rounded-pill text-bg-info">Postgres</span>
-                      <span class="badge rounded-pill text-bg-secondary">Flutter</span>
-                      <span class="badge rounded-pill text-bg-info">Redis</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="project-item-wrapper py-3">
-                  <h5 class="fs-5 fw-bold text-primary">Hospital Management System</h5>
-                  <div class="text-muted p-2">
-                    Maintaining and Adding new features in the Hospital Management System (TIBANOVA) currently serving
-                    more than 16 health Facilities.
-                  </div>
-                  <div class="tools-wrapper mx-2">
-                    <div class="fw-bold">Tools</div>
-                    <div class="fst-normal text-muted">
-                      <span class="badge rounded-pill text-bg-info">PHP</span>
-                      <span class="badge rounded-pill text-bg-secondary">Ajax, Jquery</span>
-                      <span class="badge rounded-pill text-bg-info">MySQL</span>
-                      <span class="badge rounded-pill text-bg-info">Redis</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="project-item-wrapper py-3">
-                  <h5 class="fs-5 fw-bold text-primary">Human Resource Portal</h5>
-                  <div class="text-muted p-2">
-                    Developing Human Resource Management System (HR) portal) having recruitment features, empoyee
-                    management and payroll management
-                  </div>
-                  <div class="tools-wrapper mx-2">
-                    <div class="fw-bold">Tools</div>
-                    <div class="fst-normal text-muted">
-                      <span class="badge rounded-pill text-bg-info">ExpressJS</span>
-                      <span class="badge rounded-pill text-bg-secondary">Angular</span>
-                      <span class="badge rounded-pill text-bg-info">MySQL</span>
-                      <span class="badge rounded-pill text-bg-info">Redis</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="project-item-wrapper py-3">
-                  <h5 class="fs-5 fw-bold text-primary">Bank Payment Integration</h5>
-                  <div class="text-muted p-2">
-                    Integration of the Hospital Management System with Bank Payments for allowing patients to pay via
-                    control number generated in the system and verified by the bank provider
-                  </div>
-                  <div class="tools-wrapper mx-2">
-                    <div class="fw-bold">Tools</div>
-                    <div class="fst-normal text-muted">
-                      <span class="badge rounded-pill text-bg-info">ExpressJS</span>
-                      <span class="badge rounded-pill text-bg-secondary">Angular</span>
-                      <span class="badge rounded-pill text-bg-info">MySQL</span>
-                      <span class="badge rounded-pill text-bg-info">Redis</span>
-                    </div>
-                  </div>
-                </div>
-
               </div>
             </div>
           </div>
@@ -365,60 +94,35 @@
       <div class="education-wrapper">
         <div class="education-wrapper px-2 py-2">
           <div class="column justify-content-start">
-            <div class="strongly-experience">
+            <div class="strongly-experience" *ngIf="(education$ | async) as education;">
               <div class="py-2">
                 <h3 class="">
-                  Education:
+                  {{ education.label }}:
                 </h3>
-                <div class="project-item-wrapper py-2">
-                  <a href="https://udsm.com" class="fs-5 fw-bold">University of Dar es Salaam</a>
+                <div class="project-item-wrapper py-2" *ngFor="let item of education.data;">
+                  <a href="https://udsm.com" class="fs-5 fw-bold">{{ item.institution}}</a>
                   <div class="text-muted p-2">
-                    Bachelor of Science in Computer Science
+                    {{ item.programme }}
                   </div>
                   <div class="mx-2 fst-normal text-muted d-flex">
-                    <span class="badge rounded-pill text-bg-info">2017</span> &nbsp;-&nbsp;
-                    <span class="badge rounded-pill text-bg-secondary">2020</span>
+                    <span class="badge m-1 rounded-pill text-bg-info">{{ item.startDate }}</span> <span class="m-1">-</span>
+                    <span class="badge m-1 rounded-pill text-bg-secondary">{{ item.endDate }}</span>
                   </div>
                 </div>
-
-                <div class="project-item-wrapper py-2">
-                  <a href="https://bagamoyo.sc.tz/" class="fs-5 fw-bold">Bagamoyo Secondary
-                    School</a>
-                  <div class="text-muted p-2">
-                    PCM
-                  </div>
-                  <div class="mx-2 fst-normal text-muted d-flex">
-                    <span class="badge rounded-pill text-bg-info">2015</span> &nbsp;-&nbsp;
-                    <span class="badge rounded-pill text-bg-secondary">2017</span>
-                  </div>
-                </div>
-
-                <div class="project-item-wrapper py-2">
-                  <a href="https://godsbridgeschools.org" class="fs-5 fw-bold">God's Bridge
-                    Secondary
-                    School</a>
-                  <div class="text-muted p-2">
-                    Science, Business, ICT and Arts
-                  </div>
-                  <div class="mx-2 fst-normal text-muted d-flex">
-                    <span class="badge rounded-pill text-bg-info">2011</span> &nbsp;-&nbsp;
-                    <span class="badge rounded-pill text-bg-secondary">2014</span>
-                  </div>
-                </div>
-
               </div>
             </div>
           </div>
         </div>
 
         <div class="py-3">
-          <div class="px-2">
-            <h4>INTERESTS</h4>
+          <div class="px-2" *ngIf="(interest$ | async) as interest;">
+            <h4>{{ interest.label }}</h4>
             <div class="p-2">
               <div class="fst-normal text-muted">
-                <span class="badge rounded-pill text-bg-info">Programming</span>
-                <span class="badge rounded-pill text-bg-secondary">Solving Problems</span>
-                <span class="badge rounded-pill text-bg-info">Unix</span>
+                <span class="badge m-1 rounded-pill" *ngFor="let item of interest.data; let even = even; let odd = odd"
+                  [ngClass]="{ 'text-bg-info': even, 'text-bg-secondary': odd }">
+                  {{ item.name }}
+                </span>
               </div>
             </div>
           </div>
