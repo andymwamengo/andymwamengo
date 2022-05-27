@@ -3,9 +3,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ProfileModule } from './profile/profile.module';
-import { HttpClientModule } from '@angular/common/http';
-import { NgxSpinnerModule } from 'ngx-spinner';
 import { AppRoutingModule } from './app-routing.module';
 
 
@@ -17,9 +14,6 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    ProfileModule,
-    HttpClientModule,
-    NgxSpinnerModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
