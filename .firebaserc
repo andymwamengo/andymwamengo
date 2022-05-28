@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mwamengo-portfolio": {
+      "hosting": {
+        "andymwamengo": [
+          "mwamengo-portfolio"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mwamengo-portfolio"
+  }
+}

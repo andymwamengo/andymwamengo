@@ -1,7 +1,7 @@
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center p-2">
   <div class="col-sm-6">
     <div class="container-xxl container-xl container-lg py-5">
-      <div class="account-wrapper container-xxl container-xl container-lg" *ngIf="(fullName$ | async) as fullName;">
+      <div class="account-wrapper container-xxl container-xl container-lg pb-3" *ngIf="(fullName$ | async) as fullName;">
         <div class="d-flex justify-content-start px-1">
           <img [src]="fullName.picture" class="rounded d-block" height="100px" width="100px">
         </div>
@@ -9,7 +9,7 @@
           <h4>{{ fullName.fullName }}</h4>
           <i class="text-muted">{{ fullName.title }}</i>
         </div>
-        <hr />
+        <div class="section-break"></div>
       </div>
 
       <div class="contacts-wrapper px-2" *ngIf="(contact$ | async) as contact">
