@@ -1,5 +1,20 @@
 
-export const EDUCATION = {
+
+export interface Education {
+  label: string,
+  data: DataObject[],
+}
+
+export interface DataObject {
+  id: string,
+  institution: string,
+  programme: string,
+  website: string,
+  startDate: string,
+  endDate: string,
+}
+
+export const EDUCATION: Education = {
   label: "Education",
   data: [
     {

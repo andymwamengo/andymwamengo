@@ -1,5 +1,22 @@
+import { ToolsObject } from './tools';
 
-export const PROJECT = {
+
+export interface Project {
+  label: string,
+  data: DataObject[],
+}
+
+export interface DataObject {
+  id: string,
+  link: string,
+  title: string,
+  description: string,
+  spanText: string,
+  toolLabel: string,
+  tools: ToolsObject[],
+}
+
+export const PROJECT: Project = {
   label: "Projects",
   data: [
     {

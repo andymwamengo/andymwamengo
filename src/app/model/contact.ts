@@ -1,5 +1,17 @@
 
-export const CONTACT = {
+export interface Contact {
+  label: string,
+  data: DataObject[],
+}
+
+export interface DataObject {
+  id: string,
+  label: string,
+  link: string,
+  name: string,
+}
+
+export const CONTACT: Contact = {
   label: "Contacts",
   data: [
     {

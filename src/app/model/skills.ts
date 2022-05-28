@@ -1,5 +1,21 @@
+import { ToolsObject } from "./tools";
 
-export const SKILLS = {
+export interface Skills {
+  label: string,
+  data: DataObject[],
+}
+
+export interface DataObject {
+  id: string,
+  title: string,
+  subTitle?: string,
+  extraTitle?: string,
+  tools: ToolsObject[],
+  subtools: ToolsObject[] | undefined,
+  extratools: ToolsObject[] | undefined,
+}
+
+export const SKILLS: Skills = {
   label: "Skills",
   data: [
     {

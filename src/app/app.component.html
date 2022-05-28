@@ -38,18 +38,18 @@
             <div class="strongly-experience">
               <div class="py-2">
                 <h6 class="text-muted">
-                  {{ item.subtitle }}
+                  {{ item.subTitle }}
                 </h6>
-                <div *ngIf="item?.subtools?.length > 0">
+                <div *ngIf="item.subtools">
                   <span class="badge m-1 rounded-pill"
-                  *ngFor="let subTool of item.subtools; let even = even; let odd = odd"
-                  [ngClass]="{ 'text-bg-info': even, 'text-bg-secondary': odd }">{{ subTool.name
-                  }}</span>
+                    *ngFor="let subTool of item.subtools; let even = even; let odd = odd"
+                    [ngClass]="{ 'text-bg-info': even, 'text-bg-secondary': odd }">{{ subTool.name
+                    }}</span>
                 </div>
                 <div class="p-2">
                   <em class="text-muted" *ngIf="item.extraTitle">{{ item.extraTitle}}</em>
                 </div>
-                <div *ngIf="item?.extratools?.length > 0">
+                <div *ngIf="item.extratools">
                   <span class="badge m-1 rounded-pill"
                     *ngFor="let extTool of item.extratools; let even = even; let odd = odd"
                     [ngClass]="{ 'text-bg-info': even, 'text-bg-secondary': odd }">
@@ -61,7 +61,6 @@
           </div>
         </div>
       </div>
-
 
       <div class="project-wrapper">
         <div class="project-wrapper px-2 py-2">
@@ -100,12 +99,13 @@
                   {{ education.label }}:
                 </h3>
                 <div class="project-item-wrapper py-2" *ngFor="let item of education.data;">
-                  <a href="https://udsm.com" class="fs-5 fw-bold">{{ item.institution}}</a>
+                  <a [href]="item.website" class="fs-5 fw-bold">{{ item.institution}}</a>
                   <div class="text-muted p-2">
                     {{ item.programme }}
                   </div>
                   <div class="mx-2 fst-normal text-muted d-flex">
-                    <span class="badge m-1 rounded-pill text-bg-info">{{ item.startDate }}</span> <span class="m-1">-</span>
+                    <span class="badge m-1 rounded-pill text-bg-info">{{ item.startDate }}</span> <span
+                      class="m-1">-</span>
                     <span class="badge m-1 rounded-pill text-bg-secondary">{{ item.endDate }}</span>
                   </div>
                 </div>
