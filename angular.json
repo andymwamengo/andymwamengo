@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/andymwamengo",
+            "outputPath": "dist/andymwamengo/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -115,6 +115,65 @@
             "firebaseProject": "mwamengo-portfolio",
             "firebaseHostingSite": "mwamengo-portfolio"
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/andymwamengo/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "andymwamengo:build:development",
+              "serverTarget": "andymwamengo:server:development"
+            },
+            "production": {
+              "browserTarget": "andymwamengo:build:production",
+              "serverTarget": "andymwamengo:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "andymwamengo:build:production",
+              "serverTarget": "andymwamengo:server:production"
+            },
+            "development": {
+              "browserTarget": "andymwamengo:build:development",
+              "serverTarget": "andymwamengo:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
