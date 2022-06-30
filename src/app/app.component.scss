@@ -1,9 +1,9 @@
 .text-secondary {
-  color: #6c757d;
+  color: #f2f2f2;
 }
 
 .text-info {
-  color: #17a2b8;
+  color: #f2f2f2;
 }
 
 
@@ -11,4 +11,14 @@
 .section-break {
   width: 100%;
   border-top: 1px solid rgb(233, 231, 231);
+}
+
+.text-bg-info-text {
+  color: #363434;
+  background-color: #f2f2f2;
+}
+
+.text-bg-secondary-text {
+  color: #363434;
+  background-color: #f2f2f2;
 }

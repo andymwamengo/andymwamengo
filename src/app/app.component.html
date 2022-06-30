@@ -1,18 +1,18 @@
 <div class="d-flex justify-content-center p-2">
   <div class="col-sm-6">
-    <div class="container-xxl container-xl container-lg py-5">
+    <div class="container py-5">
       <div class="account-wrapper container-xxl container-xl container-lg pb-3" *ngIf="(fullName$ | async) as fullName;">
-        <div class="d-flex justify-content-start px-1">
+        <div class="d-flex justify-content-start px-2">
           <img [src]="fullName.picture" class="rounded d-block" height="100px" width="100px">
         </div>
-        <div class="fullname-container py-2">
+        <div class="fullname-container py-2 px-2">
           <h4>{{ fullName.fullName }}</h4>
           <i class="text-muted">{{ fullName.title }}</i>
         </div>
         <div class="section-break"></div>
       </div>
 
-      <div class="contacts-wrapper px-2" *ngIf="(contact$ | async) as contact">
+      <div class="contacts-wrapper px-3" *ngIf="(contact$ | async) as contact">
         <div class="column justify-content-start">
           <h5 class="">{{ contact.label }}</h5>
           <div class="py-2" *ngFor="let item of contact.data">
@@ -22,7 +22,7 @@
         </div>
       </div>
 
-      <div class="skills-wrapper column flex-wrap py-2" *ngIf="(skills$ | async) as skill">
+      <div class="skills-wrapper column flex-wrap p-2" *ngIf="(skills$ | async) as skill">
         <h3 class="">{{ skill.label }}</h3>
         <div class="skills-wrapper px-2 py-2" *ngFor="let item of skill.data">
           <div class="column justify-content-start">
@@ -30,7 +30,7 @@
               <div class="py-2">
                 <h5 class=""> {{ item.title }}</h5>
                 <span class="badge m-1 rounded-pill" *ngFor="let tool of item.tools; let even = even; let odd = odd"
-                  [ngClass]="{ 'text-bg-info': even, 'text-bg-secondary': odd }">
+                  [ngClass]="{ 'text-bg-info-text': even, 'text-bg-secondary-text': odd }">
                   {{ tool.name }}
                 </span>
               </div>
@@ -43,7 +43,7 @@
                 <div *ngIf="item.subtools">
                   <span class="badge m-1 rounded-pill"
                     *ngFor="let subTool of item.subtools; let even = even; let odd = odd"
-                    [ngClass]="{ 'text-bg-info': even, 'text-bg-secondary': odd }">{{ subTool.name
+                    [ngClass]="{ 'text-bg-info-text': even, 'text-bg-secondary-text': odd }">{{ subTool.name
                     }}</span>
                 </div>
                 <div class="p-2">
@@ -52,7 +52,7 @@
                 <div *ngIf="item.extratools">
                   <span class="badge m-1 rounded-pill"
                     *ngFor="let extTool of item.extratools; let even = even; let odd = odd"
-                    [ngClass]="{ 'text-bg-info': even, 'text-bg-secondary': odd }">
+                    [ngClass]="{ 'text-bg-info-text': even, 'text-bg-secondary-text': odd }">
                     {{ extTool!.name }}
                   </span>
                 </div>
@@ -62,7 +62,7 @@
         </div>
       </div>
 
-      <div class="project-wrapper">
+      <div class="project-wrapper px-2">
         <div class="project-wrapper px-2 py-2">
           <div class="column justify-content-start">
             <div class="strongly-experience" *ngIf="(project$ | async) as project;">
@@ -80,7 +80,7 @@
                     <div class="fs-normal text-muted">
                       <span class="badge m-1 rounded-pill"
                         *ngFor="let tool of item.tools; let even = even; let odd = odd"
-                        [ngClass]="{ 'text-bg-info': even, 'text-bg-secondary': odd }">{{ tool.name }}</span>
+                        [ngClass]="{ 'text-bg-info-text': even, 'text-bg-secondary-text': odd }">{{ tool.name }}</span>
                     </div>
                   </div>
                 </div>
@@ -90,8 +90,8 @@
         </div>
       </div>
 
-      <div class="education-wrapper">
-        <div class="education-wrapper px-2 py-2">
+      <div class="education-wrapper px-2">
+        <div class="education-wrapper py-2">
           <div class="column justify-content-start">
             <div class="strongly-experience" *ngIf="(education$ | async) as education;">
               <div class="py-2">
@@ -104,9 +104,9 @@
                     {{ item.programme }}
                   </div>
                   <div class="mx-2 fst-normal text-muted d-flex">
-                    <span class="badge m-1 rounded-pill text-bg-info">{{ item.startDate }}</span> <span
+                    <span class="badge m-1 rounded-pill text-bg-info-text">{{ item.startDate }}</span> <span
                       class="m-1">-</span>
-                    <span class="badge m-1 rounded-pill text-bg-secondary">{{ item.endDate }}</span>
+                    <span class="badge m-1 rounded-pill text-bg-secondary-text">{{ item.endDate }}</span>
                   </div>
                 </div>
               </div>
@@ -114,13 +114,13 @@
           </div>
         </div>
 
-        <div class="py-3">
+        <div class="py-3 px-2">
           <div class="px-2" *ngIf="(interest$ | async) as interest;">
             <h4>{{ interest.label }}</h4>
             <div class="p-2">
               <div class="fst-normal text-muted">
                 <span class="badge m-1 rounded-pill" *ngFor="let item of interest.data; let even = even; let odd = odd"
-                  [ngClass]="{ 'text-bg-info': even, 'text-bg-secondary': odd }">
+                  [ngClass]="{ 'text-bg-info-text': even, 'text-bg-secondary-text': odd }">
                   {{ item.name }}
                 </span>
               </div>
