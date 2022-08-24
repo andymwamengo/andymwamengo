@@ -19,16 +19,16 @@ export const EDUCATION: Education = {
   data: [
     {
       id: '1',
-      institution: "Univeristy of Dar es Salaam",
+      institution: "University of Dar es Salaam",
       programme: "Bachelor of Science in Computer Science",
-      website: "https://udsm.com",
+      website: "https://udsm.ac.tz",
       startDate: "2017",
       endDate: "2020",
     },
     {
       id: '2',
       institution: "Bagamoyo Secondary School",
-      programme: "PCM",
+      programme: "PCM (Physics, Chemistry, Advanced Mathematics)",
       website: "https://bagamoyo.sc.tz/",
       startDate: "2015",
       endDate: "2017",

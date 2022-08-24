@@ -22,9 +22,9 @@ export const CONTACT: Contact = {
     },
     {
       id: '2',
-      label: "Webiste",
-      link: "http://andymwamengo.xyz",
-      name: "http://andymwamengo.xyz",
+      label: "Website",
+      link: "https://andymwamengo.com",
+      name: "https://andymwamengo.com",
     },
     {
       id: '3',

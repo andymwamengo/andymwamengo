@@ -13,6 +13,7 @@ import { SKILLS, Skills } from './model/skills';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  currentYear: number = new Date().getFullYear();
   contact$!: Observable<Contact>;
   fullName$!: Observable<FullName>;
   interest$!: Observable<Interest>;
