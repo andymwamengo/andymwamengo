@@ -1,11 +1,14 @@
 .text-secondary {
-  color: #f2f2f2;
+  color: #FFFF;
 }
 
 .text-info {
-  color: #f2f2f2;
+  color: #FFFF;
 }
 
+.custom-rounded-pill {
+  border: #363434 solid 1px;
+}
 
 /* Section Break 1 */
 .section-break {
@@ -15,16 +18,33 @@
 
 .text-bg-info-text {
   color: #363434;
-  background-color: #f2f2f2;
+  background-color: #FFFF;
 }
 
 .text-bg-secondary-text {
   color: #363434;
-  background-color: #f2f2f2;
+  background-color: #FFFF;
 }
 
 .reade-more-container {
   text-decoration: underline;
   color: #363434;
   font-size: 14px;
+}
+
+.underline-container {
+  text-decoration: underline;
+  color: #363434;
+}
+
+.text-small {
+  font-size: 10px;
+  font-weight: 300;
+  color: #5c5c5c;
+}
+
+
+.footer-text-muted{
+  color: #5c5c5c;
+  font-weight: 200;
 }

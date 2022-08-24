@@ -28,14 +28,14 @@
           <div class="column justify-content-start">
             <div class="strongly-experience" *ngIf="(project$ | async) as project;">
               <div class="py-0">
-                <h3 class="">
+                <h3 class="underline-container">
                   {{ project.label }}
                 </h3>
                 <div class="project-item-wrapper py-3" *ngFor="let item of project.data;">
                   <a [href]="item.link" class="fs-5 fw-bold">{{ item.title}}</a>
-                  <div class="text-muted">{{ item.projectDate }} </div>
-                  <div class="fs-5 text-info">
-                    {{ item.company}}
+                  <small class="text-muted">&nbsp;&nbsp;{{ item.projectDate }} </small>
+                  <div class="text-dark">
+                    <small class="text-small">Company Name:</small> <span>{{ item.company}}</span>
                   </div>
                   <div class="text-muted py-2">
                     {{ item.description }} <i class="py-2">{{ item.spanText}}</i>
@@ -43,7 +43,7 @@
                   <div class="tools-wrapper my-2">
                     <div class="fw-bold">{{ item.toolLabel }}</div>
                     <div class="fs-normal text-muted">
-                      <span class="badge my-1 rounded-pill"
+                      <span class="badge m-1 custom-rounded-pill"
                         *ngFor="let tool of item.tools; let even = even; let odd = odd"
                         [ngClass]="{ 'text-bg-info-text': even, 'text-bg-secondary-text': odd }">{{ tool.name }}</span>
                     </div>
@@ -58,14 +58,15 @@
         </div>
       </div>
 
-      <div class="skills-wrapper column flex-wrap px-2" *ngIf="(skills$ | async) as skill">
-        <h3 class="">{{ skill.label }}</h3>
+      <div class="skills-wrapper column flex-wrap px-2 pt-3" *ngIf="(skills$ | async) as skill">
+        <h3 class="underline-container">{{ skill.label }}</h3>
         <div class="skills-wrapper py-1" *ngFor="let item of skill.data">
           <div class="column justify-content-start">
             <div class="strongly-experience">
               <div class="py-1">
                 <h5 class=""> {{ item.title }}</h5>
-                <span class="badge my-1 rounded-pill" *ngFor="let tool of item.tools; let even = even; let odd = odd"
+                <span class="badge m-1 custom-rounded-pill"
+                  *ngFor="let tool of item.tools; let even = even; let odd = odd"
                   [ngClass]="{ 'text-bg-info-text': even, 'text-bg-secondary-text': odd }">
                   {{ tool.name }}
                 </span>
@@ -77,7 +78,7 @@
                   {{ item.subTitle }}
                 </h6>
                 <div *ngIf="item.subtools">
-                  <span class="badge my-1 rounded-pill"
+                  <span class="badge m-1 custom-rounded-pill"
                     *ngFor="let subTool of item.subtools; let even = even; let odd = odd"
                     [ngClass]="{ 'text-bg-info-text': even, 'text-bg-secondary-text': odd }">{{ subTool.name
                     }}</span>
@@ -86,7 +87,7 @@
                   <em class="text-muted" *ngIf="item.extraTitle">{{ item.extraTitle}}</em>
                 </div>
                 <div *ngIf="item.extratools">
-                  <span class="badge my-1 rounded-pill"
+                  <span class="badge m-1 custom-rounded-pill"
                     *ngFor="let extTool of item.extratools; let even = even; let odd = odd"
                     [ngClass]="{ 'text-bg-info-text': even, 'text-bg-secondary-text': odd }">
                     {{ extTool!.name }}
@@ -98,12 +99,12 @@
         </div>
       </div>
 
-      <div class="education-wrapper px-2">
+      <div class="education-wrapper px-2 pt-3">
         <div class="education-wrapper py-2">
           <div class="column justify-content-start">
             <div class="strongly-experience" *ngIf="(education$ | async) as education;">
               <div class="py-1">
-                <h3 class="">
+                <h3 class="underline-container">
                   {{ education.label }}:
                 </h3>
                 <div class="project-item-wrapper py-1" *ngFor="let item of education.data;">
@@ -112,9 +113,9 @@
                     {{ item.programme }}
                   </div>
                   <div class="my-1 fst-normal text-muted d-flex">
-                    <span class="badge my-1 rounded-pill text-bg-info-text">{{ item.startDate }}</span> <span
-                      class="my-1">-</span>
-                    <span class="badge my-1 rounded-pill text-bg-secondary-text">{{ item.endDate }}</span>
+                    <span class="badge m-1 custom-rounded-pill text-bg-info-text">{{ item.startDate }}</span> <span
+                      class="m-1">-</span>
+                    <span class="badge my-1 custom-rounded-pill text-bg-secondary-text">{{ item.endDate }}</span>
                   </div>
                 </div>
               </div>
@@ -122,12 +123,13 @@
           </div>
         </div>
 
-        <div class="px-2">
+        <div class="px-2 pt-3">
           <div class="py-2" *ngIf="(interest$ | async) as interest;">
-            <h4>{{ interest.label }}</h4>
+            <h4 class="underline-container">{{ interest.label }}</h4>
             <div class="py-1">
               <div class="fst-normal text-muted">
-                <span class="badge my-1 rounded-pill" *ngFor="let item of interest.data; let even = even; let odd = odd"
+                <span class="badge m-1 custom-rounded-pill"
+                  *ngFor="let item of interest.data; let even = even; let odd = odd"
                   [ngClass]="{ 'text-bg-info-text': even, 'text-bg-secondary-text': odd }">
                   {{ item.name }}
                 </span>
@@ -140,7 +142,7 @@
     </div>
   </div>
 </div>
-<div class="container">
+<div class="container footer-text-muted">
   <div class="d-flex justify-content-center">
     <div class="d-flex flex-wrap py-3">
       ©{{currentYear}} &nbsp;<a href="https://andymwamengo.com">Andongwisye Mwamengo</a>&nbsp; All rights reserved.
