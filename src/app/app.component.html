@@ -3,18 +3,33 @@
     <div class="container py-5">
       <div class="account-wrapper container-xxl container-xl container-lg pb-3"
         *ngIf="(fullName$ | async) as fullName;">
-        <div class="d-flex justify-content-start px-2">
+        <div class="d-flex justify-content-center px-2">
           <img [src]="fullName.picture" class="rounded d-block" height="100px" width="100px">
         </div>
-        <div class="fullname-container py-2 px-2">
-          <h4 class="fw-bold">{{ fullName.fullName }}</h4>
-          <i class="text-muted">{{ fullName.title }}</i>
+        <div class="d-flex justify-content-center">
+          <div class="fullname-container text-center py-2 px-2">
+            <h4 class="fw-bold">{{ fullName.fullName }}</h4>
+            <i class="text-muted">{{ fullName.title }}</i>
+          </div>
+        </div>
+
+        <div class="px-3 d-flex py-2 d-flex justify-content-center" *ngIf="(contact$ | async) as contact">
+
+          <div class="" *ngFor="let item of contact.data">
+            <span class="m-3 external-link" data-bs-toggle="tooltip" data-bs-placement="bottom" [title]="item.label">
+              <a [href]="item.link" class="px-2">
+                <span innerHTML=" {{item.icon}}"></span>
+              </a>
+            </span>
+          </div>
         </div>
         <div class="section-break"></div>
       </div>
 
       <div class="contacts-wrapper px-3" *ngIf="(contact$ | async) as contact">
         <div class="column justify-content-start">
+
+
           <h5 class="">{{ contact.label }}</h5>
           <div class="py-2" *ngFor="let item of contact.data">
             {{ item.label }}:
