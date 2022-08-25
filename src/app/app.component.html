@@ -3,22 +3,21 @@
     <div class="container py-5">
       <div class="account-wrapper container-xxl container-xl container-lg pb-3"
         *ngIf="(fullName$ | async) as fullName;">
-        <div class="d-flex justify-content-center px-2">
+        <div class="d-flex justify-content-start px-2">
           <img [src]="fullName.picture" class="rounded d-block" height="100px" width="100px">
         </div>
-        <div class="d-flex justify-content-center">
-          <div class="fullname-container text-center py-2 px-2">
+        <div class="d-flex justify-content-start">
+          <div class="fullname-container text-start py-2 px-2">
             <h4 class="fw-bold">{{ fullName.fullName }}</h4>
             <i class="text-muted">{{ fullName.title }}</i>
           </div>
         </div>
 
-        <div class="px-3 d-flex py-2 d-flex justify-content-center" *ngIf="(contact$ | async) as contact">
-
+        <div class="px-0 d-flex py-2 d-flex justify-content-start" *ngIf="(contact$ | async) as contact">
           <div class="" *ngFor="let item of contact.data">
-            <span class="m-3 external-link" data-bs-toggle="tooltip" data-bs-placement="bottom" [title]="item.label">
-              <a [href]="item.link" class="px-2">
-                <span innerHTML=" {{item.icon}}"></span>
+            <span class="me-3 external-link" data-bs-toggle="tooltip" data-bs-placement="bottom" [title]="item.label">
+              <a [href]="item.link" target="_blank" class="p-2">
+                <img [src]="item.icon">
               </a>
             </span>
           </div>
@@ -26,17 +25,17 @@
         <div class="section-break"></div>
       </div>
 
-      <div class="contacts-wrapper px-3" *ngIf="(contact$ | async) as contact">
+      <!-- <div class="contacts-wrapper px-3" *ngIf="(contact$ | async) as contact">
         <div class="column justify-content-start">
 
 
-          <h3 class="underline-container">{{ contact.label }}</h3>
+          <h5 class="underline-container">{{ contact.label }}</h5>
           <div class="py-2" *ngFor="let item of contact.data">
             {{ item.label }}:
             <a [href]="item.link" class="px-2">{{item.name}}</a>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="project-wrapper px-2 pt-3">
         <div class="project-wrapper py-2">

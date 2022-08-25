@@ -28,7 +28,7 @@ export const SKILLS: Skills = {
         { id: "4", name: "PHP" },
         { id: "5", name: "Python" },
       ],
-      subTitle: "Also worked with programming",
+      subTitle: "Also worked with language",
       subtools: [
         { id: "1", name: "Java" },
         { id: "2", name: "Kotlin" },
@@ -36,8 +36,8 @@ export const SKILLS: Skills = {
       extraTitle: "Exploring",
       extratools: [
         { id: "1", name: "Rust" },
-        { id: "2", name: "Golang" },
-        { id: "3", name: "C++" },
+        { id: "2", name: "Go" },
+        { id: "3", name: "C/C++" },
       ],
     },
     {
@@ -50,7 +50,7 @@ export const SKILLS: Skills = {
         { id: "4", name: "Laravel" },
         { id: "5", name: "Django" },
       ],
-      subTitle: "Also worked with programming",
+      subTitle: "Also worked with framework",
       subtools: [
         { id: "1", name: "SpringBoot" },
         { id: "2", name: "Flask" },
@@ -81,7 +81,7 @@ export const SKILLS: Skills = {
       ],
       extraTitle: "Exploring",
       extratools: [
-        { id: "1", name: "Casandra" },
+        { id: "1", name: "Cassandra" },
       ],
     },
     {
@@ -110,35 +110,36 @@ export const SKILLS: Skills = {
       title: "API Development",
       tools: [
         { id: "1", name: "REST" },
+        { id: "2", name: "GraphQL" },
       ],
       subTitle: "",
       subtools: [
         // { id: "", name: "" },
         // { id: "", name: "" },
       ],
-      extraTitle: "Exploring",
+      extraTitle: "",
       extratools: [
-        { id: "1", name: "GraphQL" },
+        // { id: "1", name: "GraphQL" },
       ],
     },
     {
       id: '6',
       title: "Design UI",
       tools: [
-        { id: "1", name: "REST" },
-        { id: "2", name: "Figma" },
+        { id: "1", name: "CSS, SCSS" },
+        { id: "2", name: "Bootstrap" },
         { id: "3", name: "Material Design" },
-        { id: "4", name: "Boostrap" },
-        { id: "5", name: "CSS, SCSS" },
+        { id: "3", name: "Ant Design" },
+        { id: "5", name: "Figma" },
       ],
       subTitle: "",
       subtools: [
         { id: "", name: "" },
         { id: "", name: "" },
       ],
-      extraTitle: "Exploring",
+      extraTitle: "",
       extratools: [
-        { id: "1", name: "Tailwind" },
+        // { id: "1", name: "Tailwind" },
       ],
     },
     {

@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
   education$!: Observable<Education>;
   skills$!: Observable<Skills>;
 
+  DATA = '<h1>Hello gowtham</h1>';
   ngOnInit() {
     this.fullName$ = of(FULL_NAME);
     this.contact$ = of(CONTACT);

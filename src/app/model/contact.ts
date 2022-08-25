@@ -20,57 +20,28 @@ export const CONTACT: Contact = {
       label: "Email",
       link: "mailto:andymwamengo@gmail.com",
       name: "andymwamengo@gmail.com",
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="24" height="24"
-      viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-      stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-      <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-      <polyline points="3 7 12 13 21 7"></polyline>
-    </svg>`,
+      icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAABmJLR0QA/wD/AP+gvaeTAAABU0lEQVRIie3WvUpcQRjG8d8aPyD4VUTtApssxDtQgoWkWa8itxHsvAixkBRWKWxTiSJp9AKEQNIKKpguiqZIXIszI7PLOdmz61EQ94G3mPN+/Oc9M8wMAz111TrGE3iPyYrqX+AQv/OcdRyjVbEd43WEDCXAacxW1FmqKbwscjawWzDTfuyrpLsi1fAR5/cAnYYa/9UyFpLxK2zhpgfQP6xr33RNrOQBt0PChmw904n8KAE7wmKSN4cvwbddBIzJZ9p/yQg+4ToHdIU1jIbYuCS/kpiuwGj7eJfEvMVO4v+G+cTfwF5OndLA2MFq6DJ20AwWD46x0OWfgho9AaP9xIecvCV875LbF7Al27GbmAn2Wbld3Dcw2t9gZePvgMN55BJ60Wde21n6KHpewLMH5JzkfXwjO+WruJY6b456hHQ+MaZkT4zxKtrCJQ4UPDEGepq6BYy/3vRimHR0AAAAAElFTkSuQmCC",
+    },
+    {
+      id: '2',
+      label: "GitHub",
+      link: "https://github.com/andymwamengo",
+      name: "https://github.com/andymwamengo",
+      icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAB0ElEQVRIie3WPWtUQRTG8V8SMEE7C41JDBK1tVZBIgo2QhJBrW0sFNQirZXfQiW+oJUQMJhgI/gJbKy0E7QLRFzBl5i4Fvdec507921XUuWByzJzz3P+58zO7Cw72iYNtIidxCzO4xAm0vlP+IBlLOHj/ypuHHexgW7Ns4lnaWF9aQ5fGwDDp4OZXqG3JB20hea7v9kWOtcnNA9v3PmE4vIexzEs1IAW0riTubkOxpqAY8mHg9WYxj4MpZ+n0/lMI4H/fh10Unz3HmlScU5HA/+GreMHBgPDbNpFqP0twaPBeCjNXaqXit0utoRmWgryrFQFv4+AT/QIPhXkeVcV3ImAh6sMFdoT5OnkX4bfcTjWB3gkGP+zd0LQaiTBdI/g0BfL/Vcrikv9RrH6Ou3G2yDPiyrDfATcxSsNf30k5/V1JMd8lekg1kvg3/AAlzAV+KZwGY/wPeJdx4G6ip/kDFfwPFLAucBzBj9KCu7icR2U5OJfSw2r2IunaeLPuF3iu1MC/aJBt5ku2roWrzb0HI5AN3GhKTTTdfyW/Kc6q35nD0ag19pCM81IljefsEpZzJoeOg01hnv41QD8Ew8Vb6e+NIob2FXyfkDzs76j7dMfXTjhKzmestYAAAAASUVORK5CYII=",
     },
     {
       id: '3',
       label: "LinkedIn",
       link: "https://www.linkedin.com/in/andymwamengo/",
       name: "https://www.linkedin.com/in/andymwamengo/",
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24"
-      height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-      stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-      <rect x="4" y="4" width="16" height="16" rx="2"></rect>
-      <line x1="8" y1="11" x2="8" y2="16"></line>
-      <line x1="8" y1="8" x2="8" y2="8.01"></line>
-      <line x1="12" y1="16" x2="12" y2="11"></line>
-      <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
-    </svg>`,
+      icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABh0lEQVRIie2Wv0oDQRCHv1gEIjYWEdQzKKQTH8R/Mfa+gXiSznewslPUxlKwUGLnA/gI2gRBxdacnckZi93jNuve3d5eFIv8YAiZ28w3M3c3GRjrj1TKcbYGbAHrwCLgSf8L8AS0gWvgeVTJzQMnQB8YZFgIXMrECqkJfFgAdQuAhit0H1FBXqhavZ8X2iwIVeHWlXv8bO8d0ALuHeABMGcDPjf8eFpeW3as/DQLWsP89O4AZeDAEdwnfv2M8h0D29iuCprQwKsJCZUU030zwCGiW5PANvBuiLGWVvFjQraqdJ9p+rUMMR7SwIEDGOAIuCLuYN0QIxg1eAr4kr669JWzwPo9fkvLKkEV4nZX5Oen4dxrGrjjALbVUGwdfPuL4HbaxQXMA0SV7qsqvhXDuQHQI2OAAJwZwEXtOAsK4o8/6el2sS4wawMGMcFsNo4sC4FNW2gkn+KLwF5eaKQGbm3vAhuu0EhVxEjsWQBD4AKLe5pnvfWI19slhtfbDmIG3MjvY/0ffQNl4j4IlhKkNgAAAABJRU5ErkJggg==",
     },
     {
       id: '4',
       label: "Twitter",
       link: "https://twitter.com/andymwamengo",
       name: "https://twitter.com/andymwamengo",
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-external-link" width="24"
-      height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-      stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-      <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5"></path>
-      <line x1="10" y1="14" x2="20" y2="4"></line>
-      <polyline points="15 4 20 4 20 9"></polyline>
-    </svg>`,
-    },
-    {
-      id: '5',
-      label: "GitHub",
-      link: "https://github.com/andymwamengo",
-      name: "https://github.com/andymwamengo",
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24"
-      height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-      stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-      <path
-        d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z">
-      </path>
-    </svg>`,
+      icon: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABjElEQVRIie3Wv0vVURjH8ZdKEojYD9ocHTTE1RYTIxAy3ARRaBcM+hfEWaJoaysaxEGJWhpadBSHEBx0KYWWCkJIM38N537hcvvec7/n3tuSfuDZzvm8z/OcH8/hUv+7WprkcxUPMYAzfMJ7HFaMa8dRnsFtXEuEjmC3BCyPzxjGDUzjAzqrmbzCamxAhe7gIAeaxRGOcYopkQpvliaso7sAeCMCzeIUy1jA42pG22UTvmEyAu0rAC2PJbRVM1vJmbCKB/4u03gC9CVaI0lEzb7gGSZK2Y4lgCdiULiC1wmGRWO4ElSZ/oZwGL7XWmGivtYa8E7zs90XHo6oRv8B+G0taKb5JoNnioLhEfaaAP2hyiuYd7daMYQt/E5ZbY6eC3tcWE80nu0erqeutAUvGoCe4F4qtFz3hVOZ1/ZiMdcINFMv1hKgTzXwwegQ7vQi/hQEHoq0vZiGhO/KjtDAU0r7Ef31QDN1YVb4CNSC/cQb3K0HFNuLWxhED24KneuXcE02hYZyXA/0UhdD5+q+K5z2ztKIAAAAAElFTkSuQmCC",
     },
   ]
 };
