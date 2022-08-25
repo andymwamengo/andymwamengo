@@ -30,7 +30,7 @@
         <div class="column justify-content-start">
 
 
-          <h5 class="">{{ contact.label }}</h5>
+          <h3 class="underline-container">{{ contact.label }}</h3>
           <div class="py-2" *ngFor="let item of contact.data">
             {{ item.label }}:
             <a [href]="item.link" class="px-2">{{item.name}}</a>
