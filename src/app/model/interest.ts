@@ -1,19 +1,18 @@
-
 export interface Interest {
-  label: string,
-  data: DataObject[],
+  label: string;
+  data: DataObject[];
 }
 
 export interface DataObject {
-  id: string,
-  name: string,
+  id: string;
+  name: string;
 }
 
 export const INTEREST: Interest = {
-  label: "INTERESTS",
+  label: 'Interests',
   data: [
-    { id: "1", name: "Programming" },
-    { id: "2", name: "Solving Problems" },
-    { id: "3", name: "Unix" },
-  ]
-}
+    { id: '1', name: 'Learning new Things' },
+    { id: '2', name: 'Solving Problems' },
+    { id: '3', name: 'Unix' },
+  ],
+};

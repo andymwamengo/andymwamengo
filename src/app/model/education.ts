@@ -25,21 +25,21 @@ export const EDUCATION: Education = {
       startDate: "2017",
       endDate: "2020",
     },
-    {
-      id: '2',
-      institution: "Bagamoyo Secondary School",
-      programme: "PCM (Physics, Chemistry, Advanced Mathematics)",
-      website: "https://bagamoyo.sc.tz/",
-      startDate: "2015",
-      endDate: "2017",
-    },
-    {
-      id: '3',
-      institution: "God's Bridge Secondary",
-      programme: "Science, Business, ICT and Arts",
-      website: "https://godsbridgeschools.org",
-      startDate: "2011",
-      endDate: "2014",
-    },
+    // {
+    //   id: '2',
+    //   institution: "Bagamoyo Secondary School",
+    //   programme: "PCM (Physics, Chemistry, Advanced Mathematics)",
+    //   website: "https://bagamoyo.sc.tz/",
+    //   startDate: "2015",
+    //   endDate: "2017",
+    // },
+    // {
+    //   id: '3',
+    //   institution: "God's Bridge Secondary",
+    //   programme: "Science, Business, ICT and Arts",
+    //   website: "https://godsbridgeschools.org",
+    //   startDate: "2011",
+    //   endDate: "2014",
+    // },
   ]
 };
