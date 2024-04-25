@@ -43,7 +43,7 @@ export const PROJECT: Project = {
       link: 'https://play.google.com/store/apps/details?id=smartcodes.tz.co.myapplication',
       title: 'Rifaly',
       company: 'Smart Africa Group(SAG)',
-      projectDate: '01/2022 - Now',
+      projectDate: '12/2022 - Now',
       description:
         'Discover exciting unlimited content whether its reading newspapers, books, magazines, articles, or listening to audio content',
       spanText: '',
@@ -59,7 +59,7 @@ export const PROJECT: Project = {
       id: '71',
       link: 'https://dev.timelydoc.com',
       title: 'Timelydoc',
-      projectDate: '03/2022 -11/2022',
+      projectDate: '03/2022 - 11/2022',
       company: 'Codeblock TZ',
       description:
         'Google Drive alternative for managing documents/attachments with premium features',
@@ -73,24 +73,24 @@ export const PROJECT: Project = {
         { id: '5', name: 'GitHub Actions,' },
       ],
     },
-    {
-      id: '72',
-      link: 'https://codeblock.co.tz/',
-      title: 'CodePlay',
-      projectDate: '03/2022 - 11/2022',
-      company: 'Codeblock TZ',
-      description:
-        'Spotify/Apple Music/BoomPlay alternative for musics/songs arts with premium and different business model',
-      spanText: '',
-      toolLabel: 'Tools',
-      tools: [
-        { id: '1', name: 'Go' },
-        { id: '2', name: 'Gin' },
-        { id: '3', name: 'REST/Graphql' },
-        { id: '4', name: 'Postgres' },
-        { id: '5', name: 'Redis' },
-      ],
-    },
+    // {
+    //   id: '72',
+    //   link: 'https://codeblock.co.tz/',
+    //   title: 'CodePlay',
+    //   projectDate: '03/2022 - 11/2022',
+    //   company: 'Codeblock TZ',
+    //   description:
+    //     'Spotify/Apple Music/BoomPlay alternative for musics/songs arts with premium and different business model',
+    //   spanText: '',
+    //   toolLabel: 'Tools',
+    //   tools: [
+    //     { id: '1', name: 'Go' },
+    //     { id: '2', name: 'Gin' },
+    //     { id: '3', name: 'REST/Graphql' },
+    //     { id: '4', name: 'Postgres' },
+    //     { id: '5', name: 'Redis' },
+    //   ],
+    // },
     {
       id: '5',
       link: 'http://www.truebitstech.com/',
